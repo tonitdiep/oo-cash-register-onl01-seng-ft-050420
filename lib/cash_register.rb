@@ -1,7 +1,7 @@
 require 'pry'
 class CashRegister
 attr_accessor :total, :discount, :items, :title
-
+#didn't use last_transaction 
   def initialize(discount = 0)
     @total = 0
     @discount = discount
@@ -14,8 +14,8 @@ attr_accessor :total, :discount, :items, :title
     quantity.times do
       @items << title
     end
-    @current_total = (price * quantity)
-    # @total = @total + current_total 
+    @last_transaction = (price * quantity)    
+    # ^ 1st trans aka the last trans/current_total. # @total = @total + current_total 
   end
   
   def apply_discount
@@ -32,6 +32,6 @@ attr_accessor :total, :discount, :items, :title
   end
   
   def void_last_transaction
-    @total = @total.to_f - @current_total.to_f
+    @total = @total.to_f - @last_transaction.to_f
   end
 end
