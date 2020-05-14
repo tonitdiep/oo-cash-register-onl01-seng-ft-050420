@@ -6,7 +6,6 @@ attr_accessor :total, :discount, :last_transaction, :items, :title
     @total = 0
     @discount = discount
     @items = []
-   
   end
    
    
